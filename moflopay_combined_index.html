@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MOFLOPAY - Plataforma de Pagos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f2ff;
+            color: #333;
+        }
+        header {
+            background: #6c2bd9;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header img {
+            width: 150px;
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #6c2bd9;
+        }
+        label {
+            display: block;
+            margin: 0.7rem 0 0.3rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            background: #6c2bd9;
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        .alt-payments {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://i.ibb.co/4n4mNmbN/Purple-Modern-Consultant-Finance-Logo-20250415-114459-0000-1.png" alt="MOFLOPAY Logo" />
+    <h1>MOFLOPAY</h1>
+    <p>Tu plataforma segura para pagos en línea</p>
+</header>
+
+<div class="container">
+    <h2>Realizar un pago</h2>
+    <form id="paymentForm">
+        <label for="name">Nombre en la tarjeta</label>
+        <input type="text" id="name" placeholder="Ej: Juan Pérez" required />
+
+        <label for="cardNumber">Número de tarjeta</label>
+        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" required />
+
+        <label for="expiry">Fecha de vencimiento (MM/AA)</label>
+        <input type="text" id="expiry" placeholder="MM/AA" required />
+
+        <label for="cvv">Código de seguridad (CVV)</label>
+        <input type="text" id="cvv" placeholder="123" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="ejemplo@correo.com" required />
+
+        <label for="amount">Valor a cancelar</label>
+        <input type="number" id="amount" placeholder="Ej: 25.00" required />
+
+        <label for="description">Descripción del pago</label>
+        <textarea id="description" placeholder="Ej: Compra de producto X" required></textarea>
+
+        <button type="submit">Pagar con tarjeta</button>
+    </form>
+
+    <div class="alt-payments">
+        <h3>Otros métodos de pago</h3>
+        <button onclick="alert('Información para transferencia bancaria mostrada')">Pagar por transferencia</button>
+        <button onclick="alert('Se ha registrado que pagará en efectivo')">Pagar en efectivo</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('paymentForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Procesando pago con tarjeta... (aquí iría la lógica de API real)');
+    });
+</script>
+
+</body>
+</html>
